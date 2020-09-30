@@ -38,12 +38,24 @@ public class RobotFreeAnim : MonoBehaviour {
 		if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
 		{
 			rot[1] -= rotSpeed * Time.fixedDeltaTime;
+			anim.SetBool("Walk_Anim", true);
+		}
+
+		else if (Input.GetKeyUp(KeyCode.A)|| Input.GetKeyUp(KeyCode.LeftArrow) )
+		{
+			anim.SetBool("Walk_Anim", false);
 		}
 
 		// Rotate Right
 		if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
 		{
 			rot[1] += rotSpeed * Time.fixedDeltaTime;
+			anim.SetBool("Walk_Anim", true);
+		}
+
+		else if (Input.GetKeyUp(KeyCode.D)|| Input.GetKeyUp(KeyCode.RightArrow) )
+		{
+			anim.SetBool("Walk_Anim", false);
 		}
 
 		// Roll
