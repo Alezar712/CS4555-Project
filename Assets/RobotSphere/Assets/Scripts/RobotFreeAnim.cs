@@ -59,7 +59,7 @@ public class RobotFreeAnim : MonoBehaviour {
 		}
 
 		// Roll
-		if (Input.GetKeyDown(KeyCode.Space))
+		if (Input.GetKeyDown(KeyCode.E))
 		{
 			if (anim.GetBool("Roll_Anim"))
 			{
@@ -72,7 +72,7 @@ public class RobotFreeAnim : MonoBehaviour {
 		}
 
 		// Close
-		if (Input.GetKeyDown(KeyCode.LeftControl))
+		if (Input.GetKeyDown(KeyCode.Q))
 		{
 			if (!anim.GetBool("Open_Anim"))
 			{
