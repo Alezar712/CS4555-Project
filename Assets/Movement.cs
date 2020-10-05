@@ -34,4 +34,13 @@ public class Movement : MonoBehaviour
 			
 		}
     }
+
+    private void OnTriggerEnter(Collider other) 
+    {
+        if (other.gameObject.CompareTag("Pickup"))
+        {
+            other.gameObject.SetActive(false);
+            
+        }
+    }
 }
