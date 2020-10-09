@@ -5,7 +5,7 @@ using UnityEngine;
 public class RobotAnim : MonoBehaviour {
 
 	Vector3 rot = Vector3.zero;
-	float rotSpeed = 40f;
+	float rotSpeed = 20f;
 	Animator anim;
 
 	// Use this for initialization
@@ -19,6 +19,8 @@ public class RobotAnim : MonoBehaviour {
 	void Update()
 	{
 		CheckKey();
+		
+
 		gameObject.transform.eulerAngles = rot;
 	}
 
@@ -30,6 +32,16 @@ public class RobotAnim : MonoBehaviour {
 			anim.SetBool("Walk_Anim", true);
 		}
 		else if (Input.GetKeyUp(KeyCode.W)|| Input.GetKeyUp(KeyCode.UpArrow) )
+		{
+			anim.SetBool("Walk_Anim", false);
+		}
+
+		// walk backwards
+		if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+		{
+			anim.SetBool("Walk_Anim", true);
+		}
+		else if (Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.DownArrow))
 		{
 			anim.SetBool("Walk_Anim", false);
 		}
