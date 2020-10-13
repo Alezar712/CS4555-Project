@@ -5,7 +5,7 @@ using UnityEngine;
 public class RobotAnim : MonoBehaviour {
 
 	Vector3 rot = Vector3.zero;
-	float rotSpeed = 20f;
+	float rotSpeed = 30f;
 	Animator anim;
 
 	// Use this for initialization
