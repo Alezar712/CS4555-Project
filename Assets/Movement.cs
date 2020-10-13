@@ -33,6 +33,12 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // to exit out of the game
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
         if (state == State.NotStun && healthStatus == State.Alive)
         { // check if he is stunned
 
