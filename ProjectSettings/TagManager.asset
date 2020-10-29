@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Trap
   - OutOfBounce
+  - Robot
   layers:
   - Default
   - TransparentFX
