@@ -15,17 +15,17 @@ public class AnimContr : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown("s"))
+        if (Input.GetKeyDown("1"))
         {
             anim.Play("ShutDown");
         }
 
-        if (Input.GetKeyDown("w"))
+        if (Input.GetKeyDown("2"))
         {
             anim.Play("WakeUp");
         }
 
-        if (Input.GetKeyDown("d"))
+        if (Input.GetKeyDown("3"))
         {
             anim.Play("Destroyed");
         }
