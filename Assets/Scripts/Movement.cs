@@ -8,7 +8,7 @@ public class Movement : MonoBehaviour
     public float movementSpeed = 1;
     public float jump = 2;
 
-    enum State {Alive, Dead, NotStun, TempStun };
+    enum State { Alive, Dead, NotStun, TempStun };
     State state = State.NotStun; // By default the robot is not stunned
     State healthStatus = State.Alive; // By default the robot is Alive
 
@@ -46,7 +46,7 @@ public class Movement : MonoBehaviour
 
             if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
             {
-                transform.position += 2 * transform.TransformDirection(Vector3.forward) * Time.deltaTime * movementSpeed * 2.5f;
+                transform.position += 2 * transform.TransformDirection(Vector3.forward) * Time.deltaTime * movementSpeed * 3f;
             }
             else if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
             {
@@ -74,14 +74,14 @@ public class Movement : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other) 
+    private void OnTriggerEnter(Collider other)
     {
-       
+
         if (other.gameObject.CompareTag("Pickup"))
         {
             other.gameObject.SetActive(false);
             print("Pickup");
-            
+
         }
         else if (other.gameObject.CompareTag("Trap"))
         {
@@ -120,15 +120,26 @@ public class Movement : MonoBehaviour
 
             rigidBody.AddRelativeForce((new Vector3(60, 60, 0)) * 12);
         }
-        
+
 
     }
-    private void LoadFirstLevel() {
+    private void LoadFirstLevel()
+    {
         SceneManager.LoadScene(1);
     }
-    private void stunMainCharacter() {
+    private void stunMainCharacter()
+    {
         state = State.NotStun;
         anim.SetBool("Open_Anim", true);
+    }
+
+    public void changeStateStunned()
+    {
+        state = State.TempStun;
+    }
+    public void changeStateNotStunned()
+    {
+        state = State.NotStun;
     }
 
 }
